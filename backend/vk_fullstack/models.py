@@ -5,6 +5,7 @@ class News(models.Model):
     author = models.CharField(max_length=100)
     rating = models.IntegerField(default=0)
     pub_date = models.DateTimeField(auto_now_add=True)
+    link = models.URLField(default="http://example.com/")
 
 class Comment(models.Model):
     news = models.ForeignKey(News, on_delete=models.CASCADE, related_name='comments')

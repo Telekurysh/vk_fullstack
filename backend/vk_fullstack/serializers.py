@@ -5,7 +5,7 @@ from .models import News, Comment
 class NewsSerializer(serializers.ModelSerializer):
     class Meta:
         model = News
-        fields = ['id', 'title', 'author', 'rating', 'pub_date']
+        fields = ['id', 'title', 'author', 'rating', 'pub_date', 'link']
 
 
 class CommentSerializer(serializers.ModelSerializer):

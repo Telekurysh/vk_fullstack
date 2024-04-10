@@ -15,7 +15,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from vk_fullstack.views import NewsList, NewsDetail, CommentList, CommentDetail
 
 urlpatterns = [
@@ -24,4 +24,5 @@ urlpatterns = [
     path('news/<int:pk>/', NewsDetail.as_view(), name='news-detail'),
     path('comments/', CommentList.as_view(), name='comment-list'),
     path('comments/<int:pk>/', CommentDetail.as_view(), name='comment-detail'),
+    path('api/', include('rest_framework.urls')),
 ]
